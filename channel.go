@@ -701,6 +701,10 @@ func (ch *Channel) RelayHosts() relay.Hosts {
 	return ch.relayHosts
 }
 
+func (ch *Channel) TraceReporter() TraceReporter {
+	return NullReporter
+}
+
 func toStringSet(ss []string) map[string]struct{} {
 	set := make(map[string]struct{}, len(ss))
 	for _, s := range ss {
